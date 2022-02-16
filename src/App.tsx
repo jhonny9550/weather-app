@@ -1,9 +1,10 @@
 import React from 'react';
+import Hero from './components/Hero';
 
 function App() {
   return (
-    <div className="container">
-      Weather App
+    <div>
+      <Hero />
     </div>
   );
 }

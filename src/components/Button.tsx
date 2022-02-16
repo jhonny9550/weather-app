@@ -9,7 +9,7 @@ export type ButtonProps = {
 const Button: React.FC<ButtonProps> = ({ children, classes = {}, text = '' }) => {
   return (
     <div className={clsx([
-      'bg-primary text-contrast px-5 py-3 shadow-md',
+      'bg-primary text-contrast px-5 py-3 shadow-xl w-fit',
       classes?.root
     ])}>
       <span className={clsx([
