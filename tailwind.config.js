@@ -14,10 +14,16 @@ module.exports = {
       colors: {
         base: '#100E1D',
         paper: '#1E213A',
-        contrast: '#E7E7EB',
+        contrast: {
+          DEFAULT: '#E7E7EB',
+          dark: '#A09FB1'
+        },
         primary: '#6E707A',
         secondary: '#3C47E9'
       },
+      fontFamily: {
+        sans: ["Raleway", 'sans-serif']
+      }
     },
   },
   plugins: [],
