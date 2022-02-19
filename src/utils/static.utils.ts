@@ -10,7 +10,7 @@ import SnowImage from '../assets/images/Snow.png';
 import ThunderstormImage from '../assets/images/Thunderstorm.png';
 import { WeatherType } from '../interfaces/weather.interface';
 
-export const getWeatherImage = (type: WeatherType) => {
+export const getWeatherImage = (type?: WeatherType) => {
   switch (type) {
     case WeatherType.CLEAR:
       return ClearImage;
@@ -24,15 +24,14 @@ export const getWeatherImage = (type: WeatherType) => {
       return LightCloudImage;
     case WeatherType.LIGHT_RAIN:
       return LightRainImage;
-    case WeatherType.SHOWER:
-      return ShowerImage;
     case WeatherType.SLEET:
       return SleetImage;
     case WeatherType.SNOW:
       return SnowImage;
     case WeatherType.THUNDERSTORM:
       return ThunderstormImage;
+    case WeatherType.SHOWER:
     default:
-      return "";
+      return ShowerImage;
   }
 }

@@ -1,0 +1,1 @@
+export const info = (data: unknown) => console.log({ data });

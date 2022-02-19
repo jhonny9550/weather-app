@@ -1,14 +1,14 @@
 export enum WeatherType {
-  CLEAR = "clear",
-  HAIL = "hail",
-  HEAVY_CLOUD = "heavy-cloud",
-  HEAVY_RAIN = "heavy-rain",
-  LIGHT_CLOUD = "light-cloud",
-  LIGHT_RAIN = "light-rain",
-  SHOWER = "shower",
-  SLEET = "sleet",
-  SNOW = "snow",
-  THUNDERSTORM = "thunderstorm",
+  CLEAR = "Clear",
+  HAIL = "Hail",
+  HEAVY_CLOUD = "Heavy Cloud",
+  HEAVY_RAIN = "Heavy Rain",
+  LIGHT_CLOUD = "Light Cloud",
+  LIGHT_RAIN = "Light Rain",
+  SHOWER = "Shower",
+  SLEET = "Sleet",
+  SNOW = "Snow",
+  THUNDERSTORM = "Thunderstorm",
 };
 
 
@@ -23,7 +23,7 @@ export interface WeatherLocationResponse {
 export type WeatherData = {
   id: number;
   applicable_date: string;
-  weather_state_name: string;
+  weather_state_name: WeatherType;
   weather_state_abbr: string;
   wind_speed: number;
   wind_direction: number;
@@ -43,11 +43,11 @@ export type WeatherSource = {
 }
 
 export interface WeatherLocationDataResponse {
-  consolidated_weather: WeatherData;
+  consolidated_weather: WeatherData[];
   latt_long: number;
   location_type: string;
   parent: Omit<WeatherLocationResponse, "distance">;
-  sources: WeatherSource;
+  sources: WeatherSource[];
   sun_rise: string;
   sun_set: string;
   time: string;
