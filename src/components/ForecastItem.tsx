@@ -1,16 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { WeatherType } from '../interfaces/weather.interface';
-import { getWeatherImage } from '../utils/static.utils';
-import Spinner from './Spinner';
+import React, { useEffect, useState } from "react";
+import { WeatherType } from "../interfaces/weather.interface";
+import { getWeatherImage } from "../utils/static.utils";
+import Spinner from "./Spinner";
 
 export type ForecastItemProps = {
-  date: string,
-  weatherType: WeatherType,
-  minDegrees: number,
-  maxDegrees: number
+  date: string;
+  weatherType: WeatherType;
+  minDegrees: number;
+  maxDegrees: number;
 };
 
-const ForecastItem: React.FC<ForecastItemProps> = ({ date, minDegrees, maxDegrees, weatherType }) => {
+const ForecastItem: React.FC<ForecastItemProps> = ({
+  date,
+  minDegrees,
+  maxDegrees,
+  weatherType,
+}) => {
   const [image, setImage] = useState<string>("");
 
   useEffect(() => {
@@ -26,7 +31,7 @@ const ForecastItem: React.FC<ForecastItemProps> = ({ date, minDegrees, maxDegree
         <span className="text-base text-contrast-dark">{maxDegrees}°C</span>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ForecastItem
+export default ForecastItem;
