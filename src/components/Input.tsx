@@ -1,8 +1,29 @@
-import React from 'react'
+import clsx from 'clsx';
+import React, { DetailedHTMLProps, InputHTMLAttributes } from 'react'
+import Icon from './Icon';
 
-const Input: React.FC = () => {
+export type InputProps = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
+
+const Input: React.FC<InputProps> = ({ ...rest }) => {
   return (
-    <div>Input</div>
+    <div
+      className="
+        relative 
+        p-4
+        text-base text-contrast-dark 
+        border border-contrast border-solid
+        flex items-center
+      "
+    >
+      <Icon className='mr-4' name="search" />
+      <input
+        {...rest}
+        className={clsx([
+          "text-contrast bg-transparent outline-none",
+          rest.className
+        ])}
+      />
+    </div>
   )
 }
 

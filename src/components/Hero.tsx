@@ -11,9 +11,11 @@ import { getWeatherImage } from '../utils/static.utils';
 export type HeroProps = {
   forecast?: WeatherData[],
   locationName?: string,
+  onLocate?: () => void;
+  onSearch?: () => void;
 };
 
-const Hero: React.FC<HeroProps> = ({ locationName = '', forecast = [] }) => {
+const Hero: React.FC<HeroProps> = ({ locationName = '', forecast = [], onLocate, onSearch }) => {
   let current: WeatherData | null = null;
   let rest: WeatherData[] = [];
   if (forecast.length > 0) {
@@ -24,8 +26,8 @@ const Hero: React.FC<HeroProps> = ({ locationName = '', forecast = [] }) => {
   return (
     <div className="bg-paper text-center text-contrast-dark min-h-screen">
       <div className="flex justify-between items-center w-full px-3 py-[18px] sm:px-[46px]">
-        <Button text="Search for places" />
-        <Fab icon="gps_fixed" />
+        <Button text="Search for places" onClick={onSearch} />
+        <Fab icon="gps_fixed" onClick={onLocate} />
       </div>
       <div className="py-10 mt-5 flex items-center justify-center relative overflow-hidden">
         <img src={getWeatherImage(current?.weather_state_name)} alt="Shower" />
